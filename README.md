@@ -1,17 +1,34 @@
-# 🛒 Klasifikacija Proizvoda (Machine Learning Task)
+🛒 Product Categorization System
+Ovaj repozitorijum sadrži kompletno rešenje za automatizovanu klasifikaciju naziva proizvoda u kategorije bele tehnike i elektronike. Sistem je razvijen korišćenjem Machine Learning algoritama i NLP (Natural Language Processing) tehnika.
 
-Ovaj repozitorijum sadrži kompletno rešenje za automatizovanu klasifikaciju naziva proizvoda u odgovarajuće kategorije (npr. frižideri, mašine za sudove, telefoni).
+📊 Analiza i Razvoj
+U okviru projekta urađena je detaljna analiza u product_classification.ipynb koja obuhvata:
 
-## 🚀 Ključne Karakteristike
-- **Visoka Preciznost:** Model ostvaruje **95.7%** tačnosti na testnom skupu podataka.
-- **Hibridni Model:** Kombinacija mašinskog učenja i "rule-based" logike za rešavanje kritičnih grešaka kod brendova kao što je Bosch.
-- **Napredna Analiza:** Korišćenje TF-IDF vektorizacije sa trigramima (ngram 1-3) za prepoznavanje specifičnih kodova modela.
+Čišćenje podataka: Identifikacija i uklanjanje nevalidnih unosa.
 
-## 📁 Struktura Projekta
-- `product_classification.ipynb` - Jupyter sveska sa detaljnom vizuelizacijom podataka i poređenjem modela (Linear SVC vs Naive Bayes vs Logistic Regression).
-- `train_model.py` - Skripta za treniranje modela i čuvanje `.pkl` fajla.
-- `predict_category.py` - Interaktivna konzolna aplikacija za testiranje predikcija.
-- `products_clean.csv` - Očišćen i pripremljen skup podataka.
+EDA (Exploratory Data Analysis): Vizuelni prikaz distribucije kategorija.
+
+Uporedni trening: Testiranje tri modela (Linear SVC, Naive Bayes, Logistic Regression) uz podelu podataka 80/20 (trening/test).
+
+Evaluacija: Detaljan prikaz performansi putem Matrice konfuzije i Classification Report-a.
+
+🧠 Tehničko Rešenje
+Najbolje rezultate pokazao je Linear SVC model sa 95.7% tačnosti. Za potrebe stabilnosti u realnom radu, implementiran je Hibridni pristup:
+
+ML Model: Primarna klasifikacija zasnovana na TF-IDF vektorizaciji (unigrami, bigrami, trigrami).
+
+Rule-based Logic: Specifične korekcije za brendove kao što su Bosch, Smeg i Samsung kako bi se osigurala preciznost na kritičnim artiklima.
+
+📂 Struktura fajlova
+train_model.py - Skripta za trening i selekciju najboljeg modela.
+
+predict_category.py - Interaktivna konzolna aplikacija za testiranje.
+
+product_model.pkl - Sačuvan (istreniran) model spreman za upotrebu.
+
+products_clean.csv - Očišćen dataset korišćen za razvoj.
+
+product_classification.html - Izveštaj analize u HTML formatu.
 
 ## 🛠️ Instalacija i Pokretanje
 1. Klonirajte repozitorijum.
